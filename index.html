@@ -1,0 +1,85 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Shidare.jp</title>
+    <link rel="shortcut icon" type="image/png" href="assets/Shidare_Cascraft_Deviantart.png"/>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+    <img src="assets/Shidare_Cascraft_Deviantart.png">
+    <div id="container">
+        <div id="blocked">
+            <div id="logo">Shidare</div>
+            <div id="date">dd</div>
+            <div id="dial">
+                <table>
+                    <tr>
+                        <td>Searching..</td>
+                        <td arr>»</td>
+                        <td lnk><a target="_blank" href="https://soundcloud.com/stream">SoundCloud</a></td>
+                        <td lnk><a target="_blank" href="https://www.youtube.com/channel/UCud3lmIRcld41IocSMIT71w">KSFClan</a></td>
+                        <td lnk><a target="_blank" href="http://www.tsquare.jp/">T-SQUARE</a></td>
+                        <td lnk><a target="_blank" href="http://www016.upp.so-net.ne.jp/elegant/">SUZUKI</a></td>
+                    </tr>
+                    <tr>
+                        <td>Some kind OLD.</td>
+                        <td arr>»</td>
+                        <td lnk><a target="_blank" href="http://ZARD.com">ZARD</a></td>
+                        <td lnk><a target="_blank" href="http://ayukawa.com/">Ayukawa</a></td>
+                    </tr>
+                    <tr>
+                        <td>Conntact</td>
+                        <td arr>»</td>
+                        <td lnk><a target="_blank" href="mailto:i@shidare.jp">EMAIL</a></td>
+						<td lnk><a target="_blank" href="http://rupthya.com/Shidare">Steam</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="search">
+                <form method="get" action="https://www.google.com/search">
+                    <input name="q" type="text" placeholder="2019 was a year of   |" />
+                </form>
+            </div>
+        </div>
+<script type="text/javascript" src="assets/jquery.min.js"></script>
+<script type="text/javascript">
+var cl = function() {
+	var ca = ["#a66959", "#769070", "#ac8d6e", "#607a86", "#8a757e", "#60867f", "#c4c4b5"];
+	$("td[lnk]").each(function(){
+		var r = ca[~~(Math.random() * ca.length)];
+		$(this).css("background-color", r);
+	});
+};
+var rl = function(){
+	var l = $('#logo');
+	var cr = l.text().split("");
+	l.empty();
+	$.each(cr, function (i, e) {
+	    l.append('<span>' + e + '</span>');
+	});
+}
+$(function(){
+	var a = setInterval(cl,200);
+	var b = rl();
+});
+        $(document).ready(function() {
+               function updateClock() {
+                        var m = new Date();
+                        var dateString = ("0" + m.getHours()).slice(-2) + "`" + ("0" + m.getMinutes()).slice(-2)
+                        setTimeout(updateClock, 1000);
+               }
+               updateClock();
+               function updateDate() {
+              var days = ['dimanche','lundi','mardi','mercredi','jeudi.','vendredi','samedi'];
+              var months=['janvier', 'février', 'mars', 'avril', 'mai','juin', 'juillet', 'août','septembre','octobre', 'novembre','décembre'];
+              var m = new Date();
+              var dateString = (days[ m.getDay() ])  + " " +  ("0" + m.getDate()).slice(-2) + " " + (months[ m.getMonth() ])   + " " + m.getFullYear()               
+                        document.getElementById('date').innerHTML = dateString;
+               }
+               updateDate();
+        });
+</script>
+</body>
+
+</html>
